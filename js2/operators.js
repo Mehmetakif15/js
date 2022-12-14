@@ -129,3 +129,42 @@ const num4 = "1";
 
 console.log(num1 > num3);
 console.log(num2 > num4, typeof num2, typeof num4); //? true "ASCII'YE GORE KIYASLAMA YAPAR"
+
+//* MANTIKSAL OPERATORLER
+
+const v1 = true;
+const v2 = false;
+
+console.log(v1 && v2); //? false
+console.log(v1 || v2); //? true
+
+console.log(!v1); //? false
+
+//? example:
+const age = prompt("Please enter your age:");
+const healty = confirm("are you healty?");
+console.log(age, healty);
+
+//? javascript te surekli falsy olan 6 deger bulunmaktadir.
+const nal = null;
+const tanimsiz = undefined;
+const bos = "";
+const falsy = false;
+const sayiDegil = NaN;
+const sifir = 0;
+
+console.log(v1 && null); //? false
+console.log(v1 && 0); //? 0
+console.log(v1 && null && true && true); //? null
+console.log(v1 && 4 && true && 5); //? 5
+
+//*****/ TIP DONUSUMLERI
+
+const dolar = "1000";
+const t1 = "500";
+
+const totalMoney = Number(dolar) + Number(t1);
+const totalMoney1 = +dolar + +t1;
+const totalMoney2 = parseInt(dolar) + parseInt(t1);
+const totalMoney3 = parseFloat(dolar) + parseFloat(t1);
+console.log(totalMoney3);
