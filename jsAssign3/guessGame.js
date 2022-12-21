@@ -2,10 +2,10 @@
 
 let trial = 5;
 
-const randomNum = Number(prompt("Enter a number between 0-100:"));
+const randomNum = Math.round(Math.random() * 100);
 
 do {
-  var guess = Number(prompt("Enter a guess:"));
+  var guess = Number(prompt(`"Enter your guess:"`));
   trial--;
   if (guess == randomNum) {
     console.log("Congrats, you win");
@@ -20,5 +20,5 @@ do {
   }
 } while (trial > 0);
 if (guess !== randomNum) {
-  console.log("Sorry, you lost 😔");
+  console.log(`"Random Number: ${randomNum} Sorry, you lost 😔"`);
 }
