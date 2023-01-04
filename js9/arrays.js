@@ -88,6 +88,41 @@ console.log(names);
 //?  DIZIYI DEGISTIREN (MUTATOR) METOTLAR
 //?================================================
 
+const cars = ["BMW", "Audi", "Fiat", "Anadol"];
+console.log(cars.pop());
+console.log(cars);
+
+console.log(cars.push("Lexus"));
+console.log(cars);
+
+console.log(cars.unshift("kia"));
+console.log(cars);
+
+console.log(cars.shift());
+console.log(cars);
+
+cars.splice(1, 0, "Honda");
+console.log(cars);
+
+cars.splice(3, 1, "Ferrari");
+console.log(cars);
+
+cars.reverse();
+console.log(cars);
+
+cars.sort();
+console.log(cars);
+
+const numbers5 = [1, 26, 111, 23, 5, 11, 7, 6];
+numbers5.sort();
+console.log(numbers5);
+
+numbers5.sort((a, b) => a - b);
+console.log(numbers5);
+
+numbers5.sort((a, b) => b - a);
+console.log(numbers5);
+
 //?================================================
 //?             DIZI ERISIM METOTLARI
 //?================================================
