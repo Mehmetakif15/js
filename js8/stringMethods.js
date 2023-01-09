@@ -30,7 +30,7 @@ console.log("*** STRING METHODS ***");
 // console.log(str4.length);
 
 // let str = "Hello World";
-// let str2 = `'Hell"o" "World'`
+// let str2 = `'Hell"o" "World'`;
 
 // console.log(str[str.length - 1]);
 // console.log(str[0]);
@@ -70,7 +70,7 @@ console.log("*** STRING METHODS ***");
 
 // let email = "tom@gmail.com";
 
-// console.log(email.includes("@"))
+// console.log(email.includes("@"));
 
 // console.log(str.indexOf("om"));
 // console.log(str.indexOf("om", str.indexOf("om") + 1));
@@ -106,6 +106,22 @@ console.log("*** STRING METHODS ***");
 // console.log(str.trimStart());
 // console.log(str.trimEnd());
 
-let x = prompt("Kullanici adinizi giriniz:").toLowerCase().trim().split(" ");
+// let x = prompt("Kullanici adinizi giriniz:").toLowerCase().trim().split(" ");
 
-console.log(x);
+// console.log(x);
+
+//startrswith
+
+let str = "clarusway@Clarusway.com is our e-mail address";
+
+console.log(str.startsWith("clarusway")); // true
+console.log(str.startsWith("Clarusway".toLowerCase())); // true
+
+console.log(str.startsWith("Clarusway", 10)); // true 10. index belirtilen değerle mi başlıyor
+
+// Endswith;
+let str2 = "clarusway@Clarusway.com is our e-mail address";
+
+console.log(str2.endsWith("address")); // true
+
+console.log(str2.endsWith("Clarusway", 19)); // true
