@@ -7,5 +7,5 @@ function validateEmail(email) {
     return "Invalid Email";
   }
 }
-
-console.log(validateEmail("example@example.com"));
+let mail = prompt("Please enter your email");
+console.log(validateEmail(mail));
