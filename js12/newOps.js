@@ -213,3 +213,60 @@ const showName = (name, surname, ...titles) => {
 };
 
 showName("Noah", "Adams", "Developer", "Instr", "Professor", "Dad");
+
+//*==================================================
+//*  SPREAD (...)
+//* =================================================
+
+//? Spread operatoru ise iterables olan bir elemani bireysel
+//? degerler haline getirir.
+
+//* array concatination
+const flyingVehicles = ["aircraft", "helicopter", "drone"];
+const automobile = ["truck", "suv", "Car"];
+
+const allVehicle1 = [flyingVehicles, automobile];
+console.log(allVehicle1);
+const allVehicle2 = [...flyingVehicles, ...automobile];
+console.log(allVehicle2);
+
+const citrus = ["orange", "lime", "lemon"];
+const fruits = ["apple", ...citrus, "banana", "chery", "pear"];
+console.log(fruits);
+
+//* Max() - Dizileri fonksiyonlara acik bir sekilde parametre vermek icin
+console.log(Math.max(1, 2, 3, 33, 4, 5));
+
+const numbers = [3, 1, 23, 49, 52, 44];
+console.log(Math.max(...numbers));
+
+//* Array Copy
+
+const myNumbers = [3, 5, 5, [7, 8]];
+const herNumbers = [-5, -4, ...myNumbers, -22]; //! concat
+
+console.log(myNumbers);
+console.log(herNumbers);
+
+// const hisNumbers = herNumbers //? Shallow Copy
+const hisNumbers = [...herNumbers]; //? Deep Copy
+hisNumbers.push(-55);
+hisNumbers[5][1] = 88; //? Nested olan degerler deep copy olmaz.
+console.log(hisNumbers);
+console.log(herNumbers);
+
+//! spread operatoru ile iki dizi arasinda kopyalama yapilabilir. bunlar birbirinden bagimsiz calisabilir. nested larda deep copy mantigi yoktur.
+
+//* Object Copy
+
+const myObj = { a: 1, b: 2, c: 4 };
+const herObj = { a: 2, z: 4, c: 3 };
+
+const copyObj = { ...myObj };
+console.log(copyObj);
+copyObj.c = 44;
+console.log(myObj);
+console.log(copyObj);
+
+const combinedObjs = { ...myObj, ...herObj };
+console.log(combinedObjs);
