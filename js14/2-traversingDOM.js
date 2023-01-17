@@ -19,9 +19,11 @@ console.log("**** TRAVERSING DOM ****");
 const list = document.querySelector("li");
 console.log(list);
 
-console.log(list.parentElement);
-console.log(list.parentNode);
-console.log(list.parentNode.parentNode.parentNode.parentNode);
+console.log(list.parentElement); //? ul
+console.log(list.parentNode); //? ul
+console.log(list.parentNode.parentNode.parentNode.parentNode); //?main
+
+//! closest(): belirtilen elementin parent'larin ilk uygun parent'i secer
 
 console.log(list.closest("section"));
 console.log(list.closest("body").querySelector("#header h1"));
@@ -38,7 +40,23 @@ console.log(addItem.parentNode.parentNode.children[0].children[0]); //?h1
 const header = document.querySelector("header");
 const h1 = header.firstElementChild;
 console.log(addItem.lastElementChild.value);
-console.log(h1.firstChild);
+
+console.log(h1.firstChild); //? DOM SELECTORS (bir yazi elementinin icerisindeki yazi dugumunu verir)
+
 //*3- Yatay Yonde traverse
 //*----------------------------------------------
+//! nextElementSibling ,previousElementSibling
+
 const ul = document.querySelector("ul");
+
+const lists = ul.children;
+console.log(lists);
+
+const js = lists[2];
+console.log(js.innerText); //? Javascript
+
+const css = js.previousElementSibling;
+console.log(css.innerText); //? CSS
+
+const django = js.nextElementSibling.nextElementSibling;
+console.log(django.innerHTML); //? Django

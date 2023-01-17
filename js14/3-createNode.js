@@ -1,5 +1,6 @@
 console.log("**** CREATE NODE ****");
 
+//?Yeni bir P elementi olusturalim
 const newPar = document.createElement("p");
 const text = document.createTextNode("Bu bir p elementidir.");
 newPar.appendChild(text);
