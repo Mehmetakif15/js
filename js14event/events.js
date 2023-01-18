@@ -6,7 +6,7 @@ console.log("****** EVENTS *******");
 
 //* EXAMPLE-1 (Mouse Over, Mouse Out )
 //* -------------------------------------------------------
-const h1 = document.querySelector("header");
+const h1 = document.querySelector("header h1");
 const langInput = document.getElementById("input");
 let newList = null;
 const buton = document.getElementById("btn");
