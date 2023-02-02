@@ -24,7 +24,8 @@ const showGithubUsers = (users) => {
 
   users.forEach((user) => {
     // console.log(user);
-    usersArticle.innerHTML += `<img class="w-50 mb-3" src=${user.avatar_url} alt="" /> `;
+    usersArticle.innerHTML += `<img class="w-50 mb-3" src=${user.avatar_url} alt="" />
+    <h2 class="h3 pb-3 text-warning"> ${user.login}</h2>`;
   });
 };
 
