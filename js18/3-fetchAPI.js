@@ -14,17 +14,31 @@ console.log("FETCH");
 
 // fetch("https://api.github.com/users").then((res) => console.log(res)); //? ham halde
 fetch("https://api.github.com/users")
-  .then((res) => res.json())
+  .then((res) => {
+    console.log(res);
+
+    //!Error Handling
+    // if (res.status >= 200 && res.status <= 299)
+    if (!res.ok) {
+      throw new Error(`Something went wrong: ${res.status}`);
+    }
+    return res.json();
+  })
   .then((data) => showGithubUsers(data))
-  .catch((err) => console.log(err)); //? islenmis halde
+  .catch((err) => {
+    console.log(err);
+    const userArticle = document.querySelector(".users");
+    userArticle.innerHTML = `
+    <h2 class="twxt-warning display-6">${err}</h2>`;
+  }); //? islenmis halde
 
 const showGithubUsers = (users) => {
   console.log(users);
-  const usersArticle = document.querySelector(".users");
+  const userArticle = document.querySelector(".users");
 
   users.forEach((user) => {
     // console.log(user);
-    usersArticle.innerHTML += `<img class="w-50 mb-3" src=${user.avatar_url} alt="" />
+    userArticle.innerHTML += `<img class="w-50 mb-3" src=${user.avatar_url} alt="" />
     <h2 class="h3 pb-3 text-warning"> ${user.login}</h2>`;
   });
 };
